@@ -1,0 +1,30 @@
+/.settings
+/test-output
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+*.sublime-project
+*.sublime-workspace
+
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+.gradle/
+gradle
+build
+
+# Screenshots
+.png
