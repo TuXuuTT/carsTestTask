@@ -4,7 +4,7 @@
        preserve-order="false">
     <test name="Simple Test">
         <packages>
-            <package name="com.ui.automation.web.*"/>
+            <package name="com.automation.testCucmbrRunners.*"/>
         </packages>
     </test>
 </suite>

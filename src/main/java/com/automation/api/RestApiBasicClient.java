@@ -1,12 +1,12 @@
 package com.automation.api;
 
 
+import com.automation.environment.EnvironmentConfigurator;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.config.DecoderConfig;
 import com.jayway.restassured.config.EncoderConfig;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.ValidatableResponse;
-import com.automation.environment.EnvironmentConfigurator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,11 +43,21 @@ public class RestApiBasicClient {
 
 
     public ValidatableResponse executeGetRequest(String requestUrl, Map<String, String> queryParams) {
-        return given().
-                queryParameters(DEFAULT_PARAMS).
-                queryParameters(queryParams).
-                get(requestUrl).
-                then().log().all();
+        return given()
+                .queryParameters(DEFAULT_PARAMS)
+                .queryParameters(queryParams)
+                .log().all()
+                .get(requestUrl)
+                .then().log().all();
+    }
+
+    public ValidatableResponse executeGetRequest(String requestUrl, String key, String value) {
+        return given()
+                .queryParameters(DEFAULT_PARAMS)
+                .queryParams(key, value)
+                .log().all()
+                .get(requestUrl)
+                .then().log().all();
     }
 
 
@@ -57,7 +67,7 @@ public class RestApiBasicClient {
                 .queryParameters(DEFAULT_PARAMS)
                 .queryParameters(queryParams)
                 .body(bodyAsText)
-                .when().log().all()
+                .log().all()
                 .post(requestUrl)
                 .then().log().all();
     }
