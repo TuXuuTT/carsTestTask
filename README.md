@@ -1,10 +1,6 @@
 execute maven task with valid credentials:
 
-mvn clean test "-Duser.login=\<loginName\>" "-Duser.password=\<loginPassword\>"
-
-Chrome is used as default browser. If you want to run in Firefox, just add to command line:
-
--DbrowserClient=ff
+mvn clean test
 
 Note:
-There are only 1 positive test. In case of providing invalid credentials test will fail. For testing negative scenario there should be another test method
+There are only 3 simple BDD black-box scenarios. Step definitions could be structured much better to be more versatile and reusable for real tasks, where more details about test scope would be provided.

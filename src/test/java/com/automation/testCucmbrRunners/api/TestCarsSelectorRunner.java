@@ -10,6 +10,6 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
         plugin = {"html:build/reports/cucumber-report", "pretty"},
         strict = true,
         snippets = SnippetType.CAMELCASE,
-        tags = {/*"@DEV"*/}) //TODO Remove tags before release, its for dev purposes only)
+        tags = {/*"~@LOAD"}*/}) //TODO Remove tags before release, its for dev purposes only. For CI use tags from command line)
 public class TestCarsSelectorRunner extends AbstractTestNGCucumberTests {
 }
